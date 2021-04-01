@@ -734,7 +734,7 @@ class FullyShardedDataParallel(nn.Module):
             # Don't free the full params for the outer-most (root) instance,
             # since those params will be needed immediately after for the
             # backward pass.
-            self.reshard_after_forward = False
+            # self.reshard_after_forward = False
 
             # Due to the use of streams, we need to make sure the previous
             # ``optim.step()`` is done before we all-gather parameters.
